@@ -72,3 +72,7 @@ end
 function chbase(nstr, from, to)
     return numbertostring(tonumber(nstr, from), to)
 end
+
+function logb(n, b)
+    return math.log(n) / math.log(b)
+end
