@@ -68,3 +68,7 @@ function numbertostring(number, base)
     until number==0
     return s
 end
+
+function chbase(nstr, from, to)
+    return numbertostring(tonumber(nstr, from), to)
+end
