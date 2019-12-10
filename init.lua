@@ -41,7 +41,7 @@ events.connect(
 )
 
 local encoding_menu = textadept.menu.menubar[_L['_Buffer']][_L['E_ncoding']]
-encoding_menu[#encoding_menu + 1] = {'nil', function() buffer:set_encoding(nil) end}
+encoding_menu[#encoding_menu + 1] = {'nil', function() buffer:set_encoding(nil); on_new_buffer() end}
 
 keys['a&'] = textadept.menu.menubar[_L['_Search']]['_Ctags']['_Goto Ctag'][2]
 keys['a,'] = textadept.menu.menubar[_L['_Search']]['_Ctags']['Jump _Back'][2]
