@@ -60,6 +60,9 @@ function numbertostring(number, base)
     if number < 0 then
         error("number must not be negative")
     end
+    if base < 2 or base > 36 then
+        error("base must be between 2 and 36")
+    end
     local s = ""
     repeat
         local remainder = number % base
