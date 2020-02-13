@@ -72,8 +72,20 @@ function numbertostring(number, base)
     return s
 end
 
-function chbase(nstr, from, to)
-    return numbertostring(tonumber(nstr, from), to)
+function chbase(n, f, t)
+    if type(n) == 'string' then
+        if type(f) ~= 'number' or type(t) ~= 'number' then 
+            error('in chbase(n, f, t) where n is a string f and t must be numbers')
+        end
+        return numbertostring(tonumber(n, f), t)
+    elseif type(n) == 'number' then
+        if type(f) ~= 'number' then
+            error('in chbase(n, t) where n is a number, t must be a number')
+        end
+        return numbertostring(n, f)
+    else 
+        error("n must be a string or a number")
+    end
 end
 
 function logb(n, b)
