@@ -1,6 +1,7 @@
 --require('elastic_tabstops').enable()
 --require('spellcheck')
-require('export')
+local export = require('export')
+export.line_numbers = false
 --require('ctags')
 _M.ctags = require('ctags')
 
