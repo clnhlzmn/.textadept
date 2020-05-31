@@ -17,7 +17,7 @@ local M = {}
 --   The Hunspell spellchecker object.
 module('_M.spellcheck')]]
 
-M.check_spelling_on_save = true
+M.check_spelling_on_save = false
 M.INDIC_SPELLING = _SCINTILLA.next_indic_number()
 
 -- Localizations.

@@ -1,5 +1,5 @@
 --require('elastic_tabstops').enable()
---require('spellcheck')
+require('spellcheck')
 local export = require('export')
 export.line_numbers = false
 --require('ctags')
