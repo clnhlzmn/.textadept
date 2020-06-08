@@ -7,11 +7,6 @@ _M.ctags = require('ctags')
 
 textadept.editing.auto_pairs[string.byte('\'')] = nil
 
-function SplitFilename(strFilename)
-    -- Returns the Path, Filename, and Extension as 3 values
-    return string.match(strFilename, "(.-)([^\\]-([^\\%.]+))$")
-end
-
 --buffer:set_theme('light', {font = 'Input', fontsize = 10})
 buffer.tab_width = 4
 buffer.view_ws = buffer.WS_VISIBLEALWAYS
@@ -24,9 +19,8 @@ function on_new_buffer()
         end 
     end
     if buffer.filename then
-        path, file, ext = SplitFilename(buffer.filename)
-        file = string.upper(file)
-        buffer.use_tabs = (file == 'GNUMAKEFILE' or file == 'MAKEFILE')
+        filename = string.lower(buffer.filename)
+        buffer.use_tabs = string.match(filename, ".*makefile$")
     end
     buffer.wrap_mode = buffer.WRAP_WHITESPACE
 end
